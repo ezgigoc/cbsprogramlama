@@ -6,84 +6,122 @@
     <title>Hobim</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Google Font kullanımı */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
         body {
-            text-align: center; 
-            background-color: #E6E6FA; /* Lila rengi */
-            font-family: Arial, sans-serif; 
+            text-align: center;
+            background: linear-gradient(135deg, #e0c3fc, #8ec5fc); /* Lila tonlarında gradient */
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
-            margin: 20px auto;
-            padding: 20px;
-            width: 80%; 
-            background-color: #fff; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
-            animation: fadeIn 1s; 
+            margin: 40px auto;
+            padding: 30px;
+            width: 80%;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
         }
 
         @keyframes fadeIn {
             from {
-                opacity: 0; 
+                opacity: 0;
                 transform: translateY(20px);
             }
             to {
-                opacity: 1; 
-                transform: translateY(0); 
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
         h1 {
-            color: #4CAF50; 
-            animation: slideIn 0.5s ease-in-out; 
+            color: #4CAF50; /* Başlık rengi yeşil */
+            animation: slideIn 0.5s ease-in-out;
+            font-size: 2.5em;
         }
 
         @keyframes slideIn {
             from {
-                transform: translateY(-20px); 
-                opacity: 0; 
+                transform: translateY(-20px);
+                opacity: 0;
             }
             to {
-                transform: translateY(0); 
-                opacity: 1; 
+                transform: translateY(0);
+                opacity: 1;
             }
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.2em;
+            color: #333;
         }
 
         img {
-            width: 100%; 
-            max-width: 500px; 
-            height: auto; 
-            border-radius: 8px; 
-            margin: 10px 0; 
-            animation: fadeIn 1s; 
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            margin: 10px 0;
+            animation: fadeIn 1s;
         }
 
+        /* Bağlantı butonları */
         a {
             text-decoration: none;
-            color: #4CAF50;
-            border-bottom: 1px solid #4CAF50;
-            transition: color 0.3s, border-bottom 0.3s; 
+            color: white;
+            background-color: #4CAF50;
+            padding: 12px 20px;
+            margin: 10px 0;
+            display: inline-block;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Hafif gölge */
         }
 
         a:hover {
-            color: #333;
-            border-bottom: 1px solid #333;
+            background-color: #45a049;
+            transform: translateY(-3px); /* Hover efekti ile yükselme */
+            box-shadow: 0 8px 15px rgba(76, 175, 80, 0.3); /* Hover gölge efekti */
         }
 
+        /* Buton stili */
         .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px 0;
-            background-color: #4CAF50;
+            background-color: #4CAF50; /* Buton yeşil */
             color: white;
             border: none;
-            border-radius: 5px;
+            padding: 12px 20px;
             text-align: center;
-            transition: background-color 0.3s;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s ease;
+            margin: 10px;
         }
 
         .button:hover {
-            background-color: #45a049; 
+            background-color: #45a049;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(76, 175, 80, 0.3); /* Hover gölge efekti */
+        }
+
+        /* Mobil uyum için düzenleme */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            p, a, .button {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -102,12 +140,10 @@
 
         <br>
         <a href="index.html">Anasayfaya Dön</a>
-        <br>
         <a href="yetenekler.html">Yetenekler Sayfasına Git</a>
-        <br>
         <a href="makaleler.html">Makalelere Git</a>
-        <br>
         <a href="map.html" class="button">Harita Sayfasına Git</a>
     </div>
 </body>
 </html>
+
