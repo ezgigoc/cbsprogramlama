@@ -4,38 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yetenekler</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             text-align: center; /* Metinleri ortada hizala */
+            background-color: #f4f4f4; /* Arka plan rengi */
+            font-family: Arial, sans-serif; /* Yazı fontu */
+        }
+
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%; /* İçerik genişliği */
+            background-color: #fff; /* Beyaz arka plan */
+            border-radius: 8px; /* Köşe yuvarlama */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+            animation: fadeIn 1s; /* Fade-in animasyonu */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0; /* Başlangıç opaklığı */
+            }
+            to {
+                opacity: 1; /* Bitiş opaklığı */
+            }
+        }
+
+        h2 {
+            color: #4CAF50; /* Başlık rengi */
+            animation: slideIn 0.5s ease-in-out; /* Slide-in animasyonu */
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px); /* Yukarı kaydır */
+                opacity: 0; /* Başlangıç opaklığı */
+            }
+            to {
+                transform: translateY(0); /* Normal konuma döner */
+                opacity: 1; /* Bitiş opaklığı */
+            }
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%; /* Tablo genişliği */
+            animation: fadeIn 1s; /* Fade-in animasyonu */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            border-bottom: 1px solid #4CAF50;
+            transition: color 0.3s, border-bottom 0.3s; /* Geçiş efekti */
+        }
+
+        a:hover {
+            color: #333;
+            border-bottom: 1px solid #333;
         }
     </style>
 </head>
 <body>
-    <h2>Yetenekler</h2>
-    <table bgcolor="black" width="100%">
-        <tr bgcolor="grey">
-            <th width="200">Python</th>
-            <th width="200">PostgreSQL</th>
-            <th width="200">Arcgis</th>
-            <th width="200">Netcad</th>
-            <th width="200">Qgis</th>
-            <th width="200">Microstation</th>
-        </tr>
-        <tr align="center" bgcolor="lightgrey">
-            <td>İyi Seviye</td>
-            <td>Orta Seviye</td>
-            <td>İyi Seviye</td>
-            <td>İyi Seviye</td>
-            <td>İyi Seviye</td>
-            <td>İyi Seviye</td>
-        </tr>
-    </table>
-    
-    <br>
-    <a href="index.html">Anasayfaya Dön</a>
-    <br>
-    <a href="makaleler.html">Makalelere Git</a>
-    <br>
-    <a href="hobim.html">Hobime Git</a> <!-- Hobi bağlantısı eklendi -->
+    <div class="container">
+        <h2>Yetenekler</h2>
+        <table>
+            <tr>
+                <th>Python</th>
+                <th>PostgreSQL</th>
+                <th>Arcgis</th>
+                <th>Netcad</th>
+                <th>Qgis</th>
+                <th>Microstation</th>
+            </tr>
+            <tr>
+                <td>İyi Seviye</td>
+                <td>Orta Seviye</td>
+                <td>İyi Seviye</td>
+                <td>İyi Seviye</td>
+                <td>İyi Seviye</td>
+                <td>İyi Seviye</td>
+            </tr>
+        </table>
+        
+        <br>
+        <a href="index.html">Anasayfaya Dön</a>
+        <br>
+        <a href="makaleler.html">Makalelere Git</a>
+        <br>
+        <a href="hobim.html">Hobime Git</a>
+    </div>
 </body>
 </html>
+

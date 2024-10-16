@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display a map</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v10.1.0/ol.css">
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/ol@v10.1.0/dist/ol.js"></script>
+  <script>
+    // OpenLayers haritasını başlat
+    const map = new ol.Map({
+      target: 'map',
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM() // OpenStreetMap kullan
+        })
+      ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([33.5154, 41.1952]), // Kastamonu
+        zoom: 8 // Başlangıç yakınlaşması
+      })
+    });
+
+    // Harita üzerinde işaretler eklemek için koordinatlar
+    const locations = [
+      ol.proj.fromLonLat([33.5154, 41.1952]), // Kastamonu
+      ol.proj.fromLonLat([33.77, 41.1825])    // Karabük
+    ];
+
+    // İşaretleri ekle
+    locations.forEach(function(location) {
+      const feature = new ol.Feature({
+        geometry: new ol.geom.Point(location)
+      });
+
+      // İşaretlerin stilini belirle
+      feature.setStyle(new ol.style.Style({
+        image: new ol.style.Circle({
+          radius: 7,
+          fill: new ol.style.Fill({color: 'red'}),
+          stroke: new ol.style.Stroke({color: 'black', width: 2})
+        })
+      }));
+
+      // Vektör katmanı oluştur ve haritaya ekle
+      const vectorLayer = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          features: [feature]
+        })
+      });
+      
+      map.addLayer(vectorLayer);
+    });
+  </script>
+</body>
+</html>
